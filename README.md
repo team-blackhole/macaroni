@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://yarnpkg.com/">
-    <img alt="macaroni" src="https://github.com/team-blackhole/macaroni/assets/blob/main/image/logo.png?raw=true" width="546">
-  </a>
+    <img alt="macaroni" src="https://github.com/team-blackhole/macaroni/blob/main/image/logo.png?raw=true" width="546">
 </p>
 
 ## start
