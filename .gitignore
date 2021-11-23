@@ -11,3 +11,7 @@
 
 node_modules
 dist
+
+.DS_STORE
+
+storybook-static
