@@ -14,4 +14,8 @@ dist
 
 .DS_STORE
 
+# storybook-build
 storybook-static
+
+# WebStorm
+.idea
