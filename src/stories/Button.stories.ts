@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/web-components';
-import { Button, ButtonProps } from './Button';
+import { Story, Meta } from '@storybook/web-components'
+import { Button, ButtonProps } from './Button'
 
 // More on default export: https://storybook.js.org/docs/web-components/writing-stories/introduction#default-export
 export default {
@@ -10,34 +10,35 @@ export default {
     onClick: { action: 'onClick' },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
-    },
-  },
-} as Meta;
+      options: ['small', 'medium', 'large']
+    }
+  }
+} as Meta
 
 // More on component templates: https://storybook.js.org/docs/web-components/writing-stories/introduction#using-args
-const Template: Story<Partial<ButtonProps>> = (args) => Button(args);
+// @ts-ignore
+const Template: Story<Partial<ButtonProps>> = (args) => Button(args)
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/web-components/writing-stories/args
 Primary.args = {
   primary: true,
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   size: 'large',
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  label: 'Button',
-};
+  label: 'Button'
+}

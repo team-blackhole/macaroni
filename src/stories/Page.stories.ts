@@ -1,20 +1,21 @@
-import { Story, Meta } from '@storybook/web-components';
-import { Page, PageProps } from './Page';
-import * as HeaderStories from './Header.stories';
+import { Story, Meta } from '@storybook/web-components'
+import { Page, PageProps } from './Page'
+import * as HeaderStories from './Header.stories'
 
 export default {
-  title: 'Example/Page',
-} as Meta;
+  title: 'Example/Page'
+} as Meta
 
-const Template: Story<Partial<PageProps>> = (args) => Page(args);
+// @ts-ignore
+const Template: Story<Partial<PageProps>> = (args) => Page(args)
 
-export const LoggedIn = Template.bind({});
+export const LoggedIn = Template.bind({})
 LoggedIn.args = {
   // More on composing args: https://storybook.js.org/docs/web-components/writing-stories/args#args-composition
-  ...HeaderStories.LoggedIn.args,
-};
+  ...HeaderStories.LoggedIn.args
+}
 
-export const LoggedOut = Template.bind({});
+export const LoggedOut = Template.bind({})
 LoggedOut.args = {
-  ...HeaderStories.LoggedOut.args,
-};
+  ...HeaderStories.LoggedOut.args
+}
