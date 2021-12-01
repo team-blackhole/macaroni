@@ -21,6 +21,7 @@
     "@storybook/addon-links": "^6.3.12",
     "@storybook/web-components": "^6.3.12",
     "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.4.0",
     "esbuild": "^0.13.15",
