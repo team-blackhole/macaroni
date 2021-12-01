@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { customElement } from "lit/decorators.js";
+import { LitElement, html, css } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
 @customElement('macaroni-button')
 export class Button extends LitElement {
@@ -17,7 +17,7 @@ export class Button extends LitElement {
       min-width: 50px;
       padding: 0 20px;
 
-      background-color: white;
+      background-color: white; 
       outline: 1px solid black;
       border-radius: 6px;
 
@@ -31,9 +31,10 @@ export class Button extends LitElement {
     }
     `
   ]
-  render() {
+
+  render () {
     return html`
             <button><slot></slot></button>
-        `;
+        `
   }
 }
