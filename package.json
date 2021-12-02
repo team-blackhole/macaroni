@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently \"node esbuild.config.js\" \"nodemon dist/index.js dist/index.js\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build-button-fixme": "./node_modules/.bin/esbuild ./src/components/button.ts --bundle --outfile=./docs/macaroni/components/button.js"
   },
   "dependencies": {
     "lit": "^2.0.2",
