@@ -1,4 +1,5 @@
 {
+  "include": ["src/components", "src/custom.d.ts"],
   "compilerOptions": {
     "esModuleInterop": true,
     "experimentalDecorators": true

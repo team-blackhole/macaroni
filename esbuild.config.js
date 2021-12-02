@@ -8,5 +8,8 @@ esbuild.build({
   sourcemap: true,
   platform: 'node',
   target: 'es2017',
-  watch: true
+  watch: true,
+  loader: {
+    '.svg': 'dataurl'
+  }
 })
