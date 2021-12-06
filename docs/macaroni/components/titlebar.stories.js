@@ -593,44 +593,78 @@
     } };
   })(n6, e5);
 
-  // image/titlebar_background.svg
-  var titlebar_background_default = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjIwIiB3aWR0aD0iMTAwIj4KICA8bGluZSB4MT0iMCIgeTE9IjEiIHgyPSIxMDAiIHkyPSIxIiBzdHlsZT0ic3Ryb2tlOnJnYigwLDAsMCk7c3Ryb2tlLXdpZHRoOjIiIC8+CiAgPGxpbmUgeDE9IjAiIHkxPSI0IiB4Mj0iMTAwIiB5Mj0iNCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoyIiAvPgogIDxsaW5lIHgxPSIwIiB5MT0iNyIgeDI9IjEwMCIgeTI9IjciIHN0eWxlPSJzdHJva2U6cmdiKDAsMCwwKTtzdHJva2Utd2lkdGg6MiIgLz4KICA8bGluZSB4MT0iMCIgeTE9IjEwIiB4Mj0iMTAwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6cmdiKDAsMCwwKTtzdHJva2Utd2lkdGg6MiIgLz4KICA8bGluZSB4MT0iMCIgeTE9IjEzIiB4Mj0iMTAwIiB5Mj0iMTMiIHN0eWxlPSJzdHJva2U6cmdiKDAsMCwwKTtzdHJva2Utd2lkdGg6MiIgLz4KICA8bGluZSB4MT0iMCIgeTE9IjE2IiB4Mj0iMTAwIiB5Mj0iMTYiIHN0eWxlPSJzdHJva2U6cmdiKDAsMCwwKTtzdHJva2Utd2lkdGg6MiIgLz4KICA8bGluZSB4MT0iMCIgeTE9IjE5IiB4Mj0iMTAwIiB5Mj0iMTkiIHN0eWxlPSJzdHJva2U6cmdiKDAsMCwwKTtzdHJva2Utd2lkdGg6MiIgLz4KPC9zdmc+Cg==";
-
   // src/components/titlebar.ts
   var Titlebar = class extends s4 {
     render() {
       return p`
-            <div><slot></slot></div>
-        `;
+      <div class="titlebar">
+        <div class="stripe1"></div>
+        <div class="stripe2"></div>
+        <div class="stripe3"></div>
+        <slot></slot>
+      </div>
+    `;
     }
   };
   Titlebar.styles = [
     r`
-      slot {
-        font-family: "Chicago", sans-serif;
-      }
-
-      div {
+      .titlebar {
         all: unset;
+
+        display: block;
+        position: relative;
 
         text-align: center;
 
-        position: relative;
         min-width: 200px;
-        padding: 0 20px;
+        height: 15px;
 
         outline: 1px solid black;
-        border-radius: 6px;
-
-        background: white url(${o(titlebar_background_default)}) repeat-x;
-
-        box-shadow: 0 0 0 3px white,
-        0 0 0 6px black;
+        overflow: hidden;
       }
 
-      button:active {
-        background-color: black;
-        color: white;
+      slot {
+        display: block;
+        position: relative;
+        height: 100%;
+        padding: 0 30px;
+        margin: 0 auto;
+        font-family: "Chicago", sans-serif;
+        font-size: 10px;
+        //background: #ffffff;
+      }
+
+      .stripe1 {
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 6px);
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      .stripe2 {
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: 5px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      .stripe3 {
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: 1px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
       }
     `
   ];
