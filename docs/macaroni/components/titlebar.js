@@ -601,7 +601,13 @@
         <div class="stripe1"></div>
         <div class="stripe2"></div>
         <div class="stripe3"></div>
-        <slot></slot>
+        <div class="slot-wrapper">
+          <slot></slot>
+        </div>
+        <div class="left-box"></div>
+        <div class="right-box">
+          <div></div>
+        </div>
       </div>
     `;
     }
@@ -623,15 +629,19 @@
         overflow: hidden;
       }
 
-      slot {
+      .slot-wrapper {
         display: block;
         position: relative;
         height: 100%;
-        padding: 0 30px;
         margin: 0 auto;
         font-family: "Chicago", sans-serif;
         font-size: 10px;
-        //background: #ffffff;
+      }
+
+      slot {
+        display: inline-block;
+        padding: 0 30px;
+        background: #ffffff;
       }
 
       .stripe1 {
@@ -665,6 +675,38 @@
         height: 1px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
+      }
+
+      .left-box {
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        width: 9px;
+        height: 9px;
+        border: 1px solid black;
+        box-shadow: 3px 0 white, -3px 0 white;
+        background-color: white;
+      }
+
+      .right-box {
+        position: absolute;
+        top: 2px;
+        right: 12px;
+        width: 9px;
+        height: 9px;
+        border: 1px solid black;
+        box-shadow: 3px 0 white, -3px 0 white;
+        background-color: white;
+      }
+
+      .right-box > div {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 4px;
+        height: 4px;
+        border: 1px solid black;
+        background-color: white;
       }
     `
   ];
