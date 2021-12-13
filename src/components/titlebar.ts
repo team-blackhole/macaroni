@@ -32,6 +32,7 @@ export class Titlebar extends LitElement {
       slot {
         display: inline-block;
         padding: 0 30px;
+        height: 100%;
         background: #ffffff;
       }
 
