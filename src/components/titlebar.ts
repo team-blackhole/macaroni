@@ -1,8 +1,11 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, property } from 'lit-element'
 import { customElement } from 'lit/decorators.js'
 
 @customElement('macaroni-titlebar')
 export class Titlebar extends LitElement {
+  @property({ type: Boolean })
+  stripe = false
+
   static styles = [
     css`
       .titlebar {
@@ -47,6 +50,10 @@ export class Titlebar extends LitElement {
         border-bottom: 1px solid black;
       }
 
+      .stripe1.no-stripe {
+        display:none;
+      }
+
       .stripe2 {
         display: block;
         position: absolute;
@@ -58,6 +65,10 @@ export class Titlebar extends LitElement {
         border-bottom: 1px solid black;
       }
 
+      .stripe2.no-stripe {
+        display:none;
+      }
+
       .stripe3 {
         display: block;
         position: absolute;
@@ -67,6 +78,10 @@ export class Titlebar extends LitElement {
         height: 1px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
+      }
+
+      .stripe3.no-stripe {
+        display:none;
       }
 
       .left-box {
@@ -101,14 +116,14 @@ export class Titlebar extends LitElement {
         background-color: white;
       }
     `
-  ];
+  ]
 
   render () {
     return html`
       <div class="titlebar">
-        <div class="stripe1"></div>
-        <div class="stripe2"></div>
-        <div class="stripe3"></div>
+        <div class="stripe1 ${this.stripe ? '' : 'no-stripe'}"></div>
+        <div class="stripe2 ${this.stripe ? '' : 'no-stripe'}"></div>
+        <div class="stripe3 ${this.stripe ? '' : 'no-stripe'}"></div>
         <div class="slot-wrapper">
           <slot></slot>
         </div>
