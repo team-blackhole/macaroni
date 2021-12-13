@@ -6,6 +6,12 @@ export class TitleBar extends LitElement {
   @property({ type: Boolean })
   stripe = false
 
+  @property({ type: Boolean })
+  closeBox = false
+
+  @property({ type: Boolean })
+  zoomBox = false
+
   static styles = [
     css`
       .title-bar {
@@ -84,7 +90,7 @@ export class TitleBar extends LitElement {
         display:none;
       }
 
-      .left-box {
+      .close-box {
         position: absolute;
         top: 2px;
         left: 12px;
@@ -94,8 +100,12 @@ export class TitleBar extends LitElement {
         box-shadow: 3px 0 white, -3px 0 white;
         background-color: white;
       }
+      
+      .close-box.no-close-box {
+        display: none;
+      }
 
-      .right-box {
+      .zoom-box {
         position: absolute;
         top: 2px;
         right: 12px;
@@ -106,7 +116,7 @@ export class TitleBar extends LitElement {
         background-color: white;
       }
 
-      .right-box > div {
+      .zoom-box > div {
         position: absolute;
         top: -1px;
         left: -1px;
@@ -114,6 +124,10 @@ export class TitleBar extends LitElement {
         height: 4px;
         border: 1px solid black;
         background-color: white;
+      }
+
+      .zoom-box.no-zoom-box {
+        display: none;
       }
     `
   ]
@@ -127,8 +141,8 @@ export class TitleBar extends LitElement {
         <div class="slot-wrapper">
           <slot></slot>
         </div>
-        <div class="left-box"></div>
-        <div class="right-box">
+        <div class="close-box ${this.closeBox ? '' : 'no-close-box'}"></div>
+        <div class="zoom-box ${this.zoomBox ? '' : 'no-zoom-box'}">
           <div></div>
         </div>
       </div>

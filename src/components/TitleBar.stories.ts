@@ -7,14 +7,18 @@ export default {
   component: 'macaroni-title-bar'
 }
 
-const Template = ({ stripe, titleText }) =>
+const Template = ({ stripe, titleText, closeBox, zoomBox }) =>
   html`
-    <macaroni-title-bar ?stripe="${stripe}">${titleText}</macaroni-title-bar>`
+    <macaroni-title-bar ?stripe="${stripe}" ?closeBox="${closeBox}" ?zoomBox="${zoomBox}">
+      ${titleText}
+    </macaroni-title-bar>`
 
 export const Default = Template.bind({})
 
 Default.args = {
   stripe: false,
+  closeBox: false,
+  zoomBox: false,
   titleText: 'sample title'
 }
 
@@ -22,5 +26,7 @@ export const Stripe = Template.bind({})
 
 Stripe.args = {
   stripe: true,
+  closeBox: true,
+  zoomBox: true,
   titleText: 'sample title'
 }
