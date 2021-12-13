@@ -1,14 +1,14 @@
 import { LitElement, html, css, property } from 'lit-element'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('macaroni-titlebar')
-export class Titlebar extends LitElement {
+@customElement('macaroni-title-bar')
+export class TitleBar extends LitElement {
   @property({ type: Boolean })
   stripe = false
 
   static styles = [
     css`
-      .titlebar {
+      .title-bar {
         all: unset;
 
         display: block;
@@ -120,7 +120,7 @@ export class Titlebar extends LitElement {
 
   render () {
     return html`
-      <div class="titlebar">
+      <div class="title-bar">
         <div class="stripe1 ${this.stripe ? '' : 'no-stripe'}"></div>
         <div class="stripe2 ${this.stripe ? '' : 'no-stripe'}"></div>
         <div class="stripe3 ${this.stripe ? '' : 'no-stripe'}"></div>

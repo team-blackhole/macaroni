@@ -1,15 +1,15 @@
 import { html } from 'lit'
 
-import './titlebar'
+import './TitleBar'
 
 export default {
-  title: 'Components/titlebar',
-  component: 'macaroni-titlebar'
+  title: 'Components/TitleBar',
+  component: 'macaroni-title-bar'
 }
 
 const Template = ({ stripe, titleText }) =>
   html`
-    <macaroni-titlebar ?stripe="${stripe}">${titleText}</macaroni-titlebar>`
+    <macaroni-title-bar ?stripe="${stripe}">${titleText}</macaroni-title-bar>`
 
 export const Default = Template.bind({})
 
