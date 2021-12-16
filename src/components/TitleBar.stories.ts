@@ -9,7 +9,7 @@ export default {
 
 const Template = ({ stripe, titleText, closeBox, zoomBox }) =>
   html`
-    <macaroni-title-bar stripe="${stripe}" closeBox="${closeBox}" zoomBox="${zoomBox}">
+    <macaroni-title-bar ?stripe="${stripe}" ?closeBox="${closeBox}" ?zoomBox="${zoomBox}">
       ${titleText}
     </macaroni-title-bar>`
 

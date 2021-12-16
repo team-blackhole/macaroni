@@ -773,7 +773,7 @@
     component: "macaroni-title-bar"
   };
   var Template = ({ stripe, titleText, closeBox, zoomBox }) => p`
-    <macaroni-title-bar stripe="${stripe}" closeBox="${closeBox}" zoomBox="${zoomBox}">
+    <macaroni-title-bar ?stripe="${stripe}" ?closeBox="${closeBox}" ?zoomBox="${zoomBox}">
       ${titleText}
     </macaroni-title-bar>`;
   var Default = Template.bind({});
