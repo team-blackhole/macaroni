@@ -615,6 +615,8 @@
     constructor() {
       super(...arguments);
       this.stripe = false;
+      this.closeBox = false;
+      this.zoomBox = false;
     }
     render() {
       return p`
@@ -625,8 +627,8 @@
         <div class="slot-wrapper">
           <slot></slot>
         </div>
-        <div class="left-box"></div>
-        <div class="right-box">
+        <div class="close-box ${this.closeBox ? "" : "no-close-box"}"></div>
+        <div class="zoom-box ${this.zoomBox ? "" : "no-zoom-box"}">
           <div></div>
         </div>
       </div>
@@ -711,7 +713,7 @@
         display:none;
       }
 
-      .left-box {
+      .close-box {
         position: absolute;
         top: 2px;
         left: 12px;
@@ -721,8 +723,12 @@
         box-shadow: 3px 0 white, -3px 0 white;
         background-color: white;
       }
+      
+      .close-box.no-close-box {
+        display: none;
+      }
 
-      .right-box {
+      .zoom-box {
         position: absolute;
         top: 2px;
         right: 12px;
@@ -733,7 +739,7 @@
         background-color: white;
       }
 
-      .right-box > div {
+      .zoom-box > div {
         position: absolute;
         top: -1px;
         left: -1px;
@@ -742,11 +748,21 @@
         border: 1px solid black;
         background-color: white;
       }
+
+      .zoom-box.no-zoom-box {
+        display: none;
+      }
     `
   ];
   __decorateClass([
     e4({ type: Boolean })
   ], TitleBar.prototype, "stripe", 2);
+  __decorateClass([
+    e4({ type: Boolean })
+  ], TitleBar.prototype, "closeBox", 2);
+  __decorateClass([
+    e4({ type: Boolean })
+  ], TitleBar.prototype, "zoomBox", 2);
   TitleBar = __decorateClass([
     n5("macaroni-title-bar")
   ], TitleBar);
